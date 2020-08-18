@@ -1,0 +1,76 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8"/>
+	<title>Un convite por Abejorral{% block title %}{% endblock %}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta content="Premium Multipurpose Admin & Dashboard Template" name="description"/>
+	<meta content="Themesbrand" name="author"/>
+	<!-- App favicon -->
+	<link rel="shortcut icon" href="{% static 'images/abeja.png' %}">
+
+	<!-- Bootstrap Css -->
+	<link href="{% static 'backoffice/assets/css/bootstrap.min.css' %}" rel="stylesheet"/>
+	<!-- Icons Css -->
+	<link href="{% static 'backoffice/assets/css/icons.min.css' %}" rel="stylesheet"/>
+	<!-- App Css-->
+	<link href="{% static 'backoffice/assets/css/app.min.css' %}" rel="stylesheet"/>
+
+	{% block styles %}{% endblock %}
+
+</head>
+<style>
+    #page-header-notifications-dropdown {
+        width: 56px;
+    }
+</style>
+<body data-topbar="dark" data-layout="horizontal">
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+        <header id="page-topbar" class="text-center">
+            <a class="logo" href="/">
+                <img src="{% static 'images/abeja.png' %}" alt="" height="60">
+            </a>
+            <button onclick="window.location='/'" class="btn header-item waves-effect" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false" style="font-size: large;">
+                Un convite por Abejorral.
+            </button>
+            </div>
+        </header>
+
+        <div class="main-content">
+        {% block content %}
+            
+        {% endblock content %}
+        </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row text-center">
+                        <div class="col-12">
+                            <i class="bx bxl-github  text-primary display-5" style="font-size: xx-large;"></i> 
+                            <p class="mt-0 pt-0 mb-0">Código fuente libre bajo licencia <a href="https://opensource.org/licenses/GPL-3.0">GPLv3</a></p>
+                            <p class="mt-0 pt-0 mb-0">Desarrollado por: <a href="https://github.com/aleducode">Alejandro Duque</a></p>
+                            <p class="mt-0 pt-0 mb-0"> Revisá el código <a href="https://github.com/aleducode">acá</a></p>
+                           
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- end main content-->
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="assets/libs/jquery/jquery.min.js"></script>
+    <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/libs/metismenu/metisMenu.min.js"></script>
+    <script src="assets/libs/simplebar/simplebar.min.js"></script>
+
+</body>
+
+</html>
