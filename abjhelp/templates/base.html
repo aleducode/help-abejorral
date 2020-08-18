@@ -11,6 +11,8 @@
 	<meta content="Themesbrand" name="author"/>
 	<!-- App favicon -->
 	<link rel="shortcut icon" href="{% static 'images/abeja.png' %}">
+     <!-- Sweet Alert-->
+     <link href="{% static 'backoffice/assets/libs/sweetalert2/sweetalert2.min.css' %}" rel="stylesheet" type="text/css" />
 
 	<!-- Bootstrap Css -->
 	<link href="{% static 'backoffice/assets/css/bootstrap.min.css' %}" rel="stylesheet"/>
@@ -65,6 +67,23 @@
 
     </div>
 
+
+    <script src="{% static 'backoffice/assets/libs/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'backoffice/assets/libs/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'backoffice/assets/libs/metismenu/metisMenu.min.js' %}"></script>
+    <script src="{% static 'backoffice/assets/libs/simplebar/simplebar.min.js' %}"></script>
+    <script src="{% static 'backoffice/assets/libs/node-waves/waves.min.js' %}"></script>
+    <script src="{% static 'backoffice/assets/js/app.js' %}"></script>
+        <!-- Sweet Alerts js -->
+        <script src="{% static 'backoffice/assets/libs/sweetalert2/sweetalert2.min.js' %}"></script>
+
+        <!-- Sweet alert init js-->
+        <script src="{% static 'backoffice/assets/js/pages/sweet-alerts.init.js' %}"></script>
+        
+        {% block js %}
+            
+        {% endblock js %}
+            
 </body>
 
 </html>

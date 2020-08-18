@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 
 {% block content %}
 
@@ -13,29 +13,48 @@
             <div class="col-lg-4 offset-lg-2" onclick="window.location.replace('{% url 'users:disclaimer'%}')">
                 <div class="card border border-success">
                     <div class="card-header bg-transparent border-success">
-                        <h5 class="my-0 text-success" style="font-size: x-large;"><i class="mdi mdi-check-all mr-3"></i>Necesito ayuda</h5>
+                        <h5 class="my-0 text-success" style="font-size: x-large;"><i
+                                class="mdi mdi-check-all mr-3"></i>Necesito ayuda</h5>
                     </div>
                     <div class="card-body">
                         <h5 class="card-title mt-0">card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4">
-                <div class="card border border-primary">
+                <div class="card border border-primary" onclick="runModal()">
                     <div class="card-header bg-transparent border-primary">
-                        <h5 class="my-0 text-primary" style="font-size: x-large;"><i class="mdi mdi-bullseye-arrow mr-3"></i>Quiero ayudar</h5>
+                        <h5 class="my-0 text-primary" style="font-size: x-large;"><i
+                                class="mdi mdi-bullseye-arrow mr-3"></i>Quiero ayudar</h5>
                     </div>
                     <div class="card-body">
                         <h5 class="card-title mt-0">card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
                     </div>
                 </div>
             </div>
-            
+
         </div>
         <!-- end row -->
     </div> <!-- container-fluid -->
 </div>
 {% endblock content %}
+
+{% block js %}
+<script>
+    function runModal(){
+        Swal.fire({
+            title: 'Estamos recolectando las necesidades de Abejorral!',
+            text: 'Muy pronto esta sección estará disponible.',
+            imageUrl: '{% static 'images/miel.png' %}',
+            imageWidth: 200,
+            imageHeight: 200,
+            imageAlt: 'Muy pronto esta sección estará disponible',
+          })
+    }
+</script>
+{% endblock js %}
     
