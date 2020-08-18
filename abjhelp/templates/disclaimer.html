@@ -8,22 +8,23 @@
         <div class="col-xl-4 offset-lg-4">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title mb-4 text-center">Políticas</h4>
+                    <h3 class="mb-2 text-center">Políticas</h3>
 
                     <div class="text-center">
                         <div class="mb-4">
                             <i class="bx bx bx-user-voice   text-primary display-4"></i>
                         </div>
-                        <h3>Importante</h3>
+                        <h4>Importante</h4>
                         <p class="text-justify">Esta es una plataforma ciudadana sin ánimo de lucro, que opera gracias al aporte voluntario de personas como tú que buscan transformar la vida de niños y jóvenes del municipio de Abejorral.</p>
                     </div>
-
+                    <a href="{% url 'users:advisor' %}">Mas información</a>
+                </div>
                     <div class="table-responsive mt-4 text-center">
-                        <h3>Cómo funciona?</h3>
+                        <h4>Cómo funciona?</h4>
                         <p class="text-justify">Según nuestro modelo de trabajo, tenemos que cargar algunos datos personales (nombre, teléfono de contacto, y lo que necesitas), La información que se suministre será 100% de acceso público. Esta plataforma te permite compartir tu pedido de ayuda para que más gente lo vea, y así lograr solventar tú necesidad.</p>
                     </div>
-                
-                    <a href="{% url 'users:help-request' %}" class="btn btn-lg btn-block btn-success w-lg waves-effect waves-light" style="color:white">Entendido</a>
+                <a href="{% url 'users:help-request' %}" class="btn btn-lg btn-block btn-success w-lg waves-effect waves-light" style="color:white">Entendido</a>
+                    
                 </div>
             </div>
         </div>

@@ -32,3 +32,6 @@ class HelpRequestView(FormView):
 
 class ThanksView(TemplateView):
     template_name = 'thanks.html'
+
+class AdvisorView(TemplateView):
+    template_name = 'legal_advisor.html'

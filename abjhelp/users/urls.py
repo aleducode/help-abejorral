@@ -24,5 +24,10 @@ urlpatterns = [
         view=users_view.ThanksView.as_view(),
         name='thanks'
     ),
+    path(
+        route="advisor",
+        view=users_view.AdvisorView.as_view(),
+        name='advisor'
+    ),
 
 ]
