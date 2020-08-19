@@ -58,3 +58,19 @@ class HelpRequest(AbjHelpModel):
     
     def __str__(self):
         return self.name
+
+class DonorRequest(AbjHelpModel):
+    name = models.CharField(max_length=255)
+    phone_number = models.CharField(max_length=255)
+    email = models.EmailField(blank=True, null=True)
+    address = models.TextField(blank=True, null=True)
+    is_active = models.BooleanField(default=True)
+
+    class Meta:
+        """Meta class."""
+
+        verbose_name = "Registro colaborador"
+        verbose_name_plural = "Registro colaboradores"
+    
+    def __str__(self):
+        return self.name
