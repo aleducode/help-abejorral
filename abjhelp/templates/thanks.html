@@ -15,26 +15,24 @@
                         </div>
                         <div class="col-xs-4">
                             <div class="card bg-soft-primary">
-                                
-                                    <div class="row text-center">
-                                            <div class="col-12">
-                                            <div class="text-primary p-3 ">
-                                                <h5 class="text-primary">Solicitud recibida</h5>
-                                                <p>La compartiremos con nuestros colaboradores y ellos te contactarán.</p>
-                                                
-                                            </div>
-                                        </div>
 
-                                        
-                                            
-                                            <img src="{% static 'backoffice/assets/images/profile-img.png' %}" alt="" class="img-fluid">                                    
-                                    </div>                               
+                                <div class="row text-center">
+                                    <div class="col-12">
+                                        <div class="text-primary p-3 ">
+                                            <h5 class="text-primary">Solicitud recibida</h5>
+                                            <p>La compartiremos con nuestros colaboradores y ellos te contactarán.</p>
+
+                                        </div>
+                                    </div>
+                                    <img src="{% static 'backoffice/assets/images/profile-img.png' %}" alt=""
+                                        class="img-fluid">
+                                </div>
                             </div>
-                            <a href="{% url 'users:dashboard' %}" class="btn btn-primary btn-lg enabled" role="button" aria-enabled="true">Inicio</a>
+                            <a href="{% url 'users:dashboard' %}" class="btn btn-primary btn-lg enabled" role="button"
+                                aria-enabled="true">Regresar al inicio</a>
                         </div>
-                            <div class="col-5 align-self-end">
-                                <img src="assets/images/profile-img.png" alt="" class="img-fluid">
-                            </div>
+                        <div class="col-5 align-self-end">
+                            <img src="assets/images/profile-img.png" alt="" class="img-fluid">
                         </div>
                     </div>
                 </div>
@@ -42,5 +40,5 @@
         </div>
     </div>
 </div>
+</div>
 {% endblock content %}
-    
