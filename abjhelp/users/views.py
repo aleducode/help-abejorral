@@ -1,19 +1,15 @@
 """Branches Views."""
 
 # Django
-from django.contrib import messages
-from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import TemplateView, FormView
-from django.shortcuts import get_object_or_404
-from django.urls import reverse
-from django.shortcuts import redirect
 from django.urls import reverse_lazy
+
+# Forms
 from abjhelp.users.forms import HelpRequestForm
 
 
 class DashboardView(TemplateView):
     template_name = 'index.html'
-
 
 
 class DisclaimerView(TemplateView):
@@ -32,6 +28,7 @@ class HelpRequestView(FormView):
 
 class ThanksView(TemplateView):
     template_name = 'thanks.html'
+
 
 class AdvisorView(TemplateView):
     template_name = 'legal_advisor.html'

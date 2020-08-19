@@ -1,6 +1,8 @@
 """User forms."""
+
 from django import forms
 from abjhelp.users.models import HelpRequest
+
 
 class HelpRequestForm(forms.Form):
 
@@ -20,16 +22,16 @@ class HelpRequestForm(forms.Form):
         required=False,
         widget=forms.Textarea(
             attrs={
-            "rows":5, "cols":20,
-            'class': 'form-control',
-        }),
+                "rows": 5, "cols": 20,
+                'class': 'form-control',
+            }),
     )
     phone_number = forms.CharField(
         label='Número del celular de contacto',
         widget=forms.TextInput(
             attrs={
-            'class': 'form-control',
-        }),
+                'class': 'form-control',
+            }),
         error_messages={
             'required': 'Este campo es requerido',
         },

@@ -277,3 +277,4 @@ abjhelp/media/
 .env
 .envs/*
 !.envs/.local/
+.vscode/
