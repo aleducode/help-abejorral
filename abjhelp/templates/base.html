@@ -7,8 +7,18 @@
 	<meta charset="utf-8"/>
 	<title>Un convite por Abejorral{% block title %}{% endblock %}</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta content="Premium Multipurpose Admin & Dashboard Template" name="description"/>
-	<meta content="Themesbrand" name="author"/>
+    <meta property="og:locale" content="es_CO" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Un convite por Abejorral" />
+	<meta property="og:description" content="Esta es una plataforma ciudadana sin ánimo de lucro, que opera gracias al aporte voluntario de personas como tú, que buscan transformar la vida de niños y jóvenes del municipio de Abejorral." />
+	<meta property="og:url" content="https://unconviteporabejorral.org/" />
+	<meta property="og:site_name" content="Un convite por Abejorral" />
+    <meta property="article:publisher" content="https://unconviteporabejorral.org/" />
+	<meta property="og:image" content="{% static 'images/convite-banner.png' %}" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Un convite por Abejorral" />
+	<meta name="twitter:image" content="{% static 'images/convite-banner.png' %}" />
+
 	<!-- App favicon -->
 	<link rel="shortcut icon" href="{% static 'images/abeja.png' %}">
      <!-- Sweet Alert-->
@@ -38,7 +48,7 @@
                 <img src="{% static 'images/abeja.png' %}" alt="" height="60">
             </a>
             <button onclick="window.location='/'" class="btn header-item waves-effect" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false" style="font-size: large;">
-                Un convite por Abejorral.
+                Un convite por Abejorral
             </button>
             </div>
         </header>
