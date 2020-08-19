@@ -9,8 +9,7 @@ jobs:
       - name: Deployment
         uses: fifsky/ssh-action@master
         with:
-          command: |
-            ./deploy.sh
+          command: bash deploy.sh
           host: ${{ secrets.HOST_PROD }}
           user: ${{ secrets.USER }}
           key: ${{ secrets.PRIVATE_KEY}}
