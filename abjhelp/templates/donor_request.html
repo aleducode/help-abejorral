@@ -5,10 +5,11 @@
 
 <div class="page-content">
     <div class="container-fluid">
+        <a href="{% url 'users:index' %}">Regresar</a>
         <div class="col-xl-4 offset-lg-4">
             <div class="card">
                 <div class="card-body">
-                    <h3 class="mb-4 text-center">Datos Colaborador</h3>
+                    <h3 class="mb-4 text-center">Datos Colaborador❤️</h3>
                     <form method="POST">
                         {% csrf_token %}
                         {{form.as_p}}

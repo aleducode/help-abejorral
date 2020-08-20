@@ -6,7 +6,7 @@ urlpatterns = [
     path(
         route="",
         view=users_view.DashboardView.as_view(),
-        name='dashboard'
+        name='index'
     ),
    	path(
         route="disclaimer",
