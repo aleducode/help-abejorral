@@ -1,7 +1,7 @@
 """User forms."""
 
 from django import forms
-from abjhelp.users.models import HelpRequest,DonorRequest
+from abjhelp.users.models import HelpRequest, DonorRequest
 
 
 class HelpRequestForm(forms.Form):
@@ -53,6 +53,7 @@ class HelpRequestForm(forms.Form):
         help_request = HelpRequest.objects.get_or_create(**data)
         return help_request
 
+
 class DonorRequestForm(forms.Form):
 
     name = forms.CharField(
@@ -67,7 +68,6 @@ class DonorRequestForm(forms.Form):
         }),
     )
 
-    
     phone_number = forms.CharField(
         label='Número de whatsapp',
         widget=forms.TextInput(
@@ -98,7 +98,7 @@ class DonorRequestForm(forms.Form):
     )
 
     def save(self):
-        """Create help resquest."""
+        """Create Donor resquest."""
         data = self.cleaned_data
         donor_request = DonorRequest.objects.get_or_create(**data)
-        return donor_request      
+        return donor_request
