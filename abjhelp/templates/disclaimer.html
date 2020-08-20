@@ -6,23 +6,23 @@
 <div class="page-content">
     <div class="container-fluid">
         <div class="col-xl-4 offset-lg-4">
-            <div class="card">
-                <div class="card-body">
-                    <h3 class="mb-2 text-center">Políticas</h3>
+            
+            <a href="{% url 'users:index' %}">Regresar</a>
+            <div class="card mt-0 pt-0">
+                <div class="card-body mt-0 pt-0">
+                    <h3 class="mt-0 pt-0 text-center">Políticas de uso</h3>
 
-                    <div class="text-center">
-                        <div class="mb-4">
+                    <div class="text-center mt-0 mb-0">
+                        <div>
                             <i class="bx bx bx-user-voice   text-primary display-4"></i>
                         </div>
                         <h4>Importante</h4>
-                        <p class="text-justify">Esta es una plataforma ciudadana sin ánimo de lucro, que opera gracias
+                        <p class="text-justify mt-0 mb-0">Esta es una plataforma ciudadana sin ánimo de lucro, que opera gracias
                             al aporte voluntario de personas como tú, que buscan transformar la vida de niños y
-                            jóvenes del municipio de Abejorral.</p>
+                            jóvenes del municipio de Abejorral. <a href="{% url 'users:advisor' %}" >Mas información</a></p>
                     </div>
-                    <div class="text-center">
-                    <a href="{% url 'users:advisor' %}" >Mas información</a>
-                </div>
-                    <div class="table-responsive mt-4 text-center">
+                    
+                    <div class="table-responsive text-center">
                         <h4>Cómo funciona?</h4>
                         <p class="text-justify">Según nuestro modelo de trabajo, tenemos que cargar algunos datos
                             personales (nombre, teléfono de contacto, y lo que necesitas). La información que se
