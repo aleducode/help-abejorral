@@ -30,7 +30,7 @@ urlpatterns = [
         name='advisor'
     ),
     path(
-        route="donor",
+        route="donante",
         view=users_view.DonorRequestView.as_view(),
         name='donor'
     ),

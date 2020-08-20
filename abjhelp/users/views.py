@@ -35,6 +35,10 @@ class DonorRequestView(FormView):
     form_class = DonorRequestForm
     success_url = reverse_lazy('users:thanks_donor')
 
+    def form_invalid(self, form):
+        """If the form is invalid, render the invalid form."""
+        return self.render_to_response(self.get_context_data(form=form))
+
     def form_valid(self, form):
         form.save()
         return super().form_valid(form)

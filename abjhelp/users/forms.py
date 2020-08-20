@@ -86,13 +86,15 @@ class DonorRequestForm(forms.Form):
         widget=forms.TextInput(attrs={
             'class': 'form-control',
         }),
+        error_messages={
+            'invalid': 'Porfavor ingrese un correo válido',
+        },
     )
     address = forms.CharField(
         label='¿Dónde estás ubicado?',
         required=False,
-        widget=forms.Textarea(
+        widget=forms.TextInput(
             attrs={
-                "rows": 5, "cols": 20,
                 'class': 'form-control',
             }),
     )
