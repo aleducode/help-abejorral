@@ -8,18 +8,18 @@ urlpatterns = [
         view=users_view.DashboardView.as_view(),
         name='dashboard'
     ),
-	path(
+   	path(
         route="disclaimer",
         view=users_view.DisclaimerView.as_view(),
         name='disclaimer'
     ),
 
-	path(
+   	path(
         route="solicitud-ayuda",
         view=users_view.HelpRequestView.as_view(),
         name='help-request'
     ),
-	path(
+   	path(
         route="gracias😬",
         view=users_view.ThanksView.as_view(),
         name='thanks'
@@ -29,20 +29,20 @@ urlpatterns = [
         view=users_view.AdvisorView.as_view(),
         name='advisor'
     ),
-       path(
+    path(
         route="donor",
         view=users_view.DonorRequestView.as_view(),
         name='donor'
     ),
     path(
-        route="dis_donor",
-        view=users_view.Dis_DonorView.as_view(),
-        name='dis_donor'
+        route="disclaimer_donante",
+        view=users_view.DisclaimerDonorView.as_view(),
+        name='dislcaimer_donor'
     ),
     path(
-        route="graciasD",
-        view=users_view.Thanks_DonorView.as_view(),
-        name='graciasD'
+        route="gracias_donante",
+        view=users_view.ThanksDonorView.as_view(),
+        name='thanks_donor'
     ),
 
 ]
