@@ -21,8 +21,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div class="card border border-primary" onclick="runModal()">
+            
+            <div class="col-lg-4" onclick="window.location.replace('{% url 'users:dis_donor'%}')">
+                <div class="card border border-primary">
                     <div class="card-header bg-transparent border-primary">
                         <h5 class="my-0 text-primary" style="font-size: x-large;"><i
                                 class="mdi mdi-bullseye-arrow mr-3"></i>Quiero ayudar</h5>
@@ -39,18 +40,5 @@
 </div>
 {% endblock content %}
 
-{% block js %}
-<script>
-    function runModal(){
-        Swal.fire({
-            title: 'Estamos recolectando las necesidades de Abejorral!',
-            text: 'Muy pronto esta sección estará disponible.',
-            imageUrl: '{% static 'images/miel.png' %}',
-            imageWidth: 200,
-            imageHeight: 200,
-            imageAlt: 'Muy pronto esta sección estará disponible',
-          })
-    }
-</script>
-{% endblock js %}
+
     

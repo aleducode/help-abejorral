@@ -29,5 +29,20 @@ urlpatterns = [
         view=users_view.AdvisorView.as_view(),
         name='advisor'
     ),
+       path(
+        route="donor",
+        view=users_view.DonorRequestView.as_view(),
+        name='donor'
+    ),
+    path(
+        route="dis_donor",
+        view=users_view.Dis_DonorView.as_view(),
+        name='dis_donor'
+    ),
+    path(
+        route="graciasD",
+        view=users_view.Thanks_DonorView.as_view(),
+        name='graciasD'
+    ),
 
 ]

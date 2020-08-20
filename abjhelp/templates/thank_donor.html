@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="col-xl-4 offset-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="mb-4 text-center">Listo</h3>
+                    <div class="text-center">
+                        <div class="mb-4">
+                            <i class="bx bx-happy-beaming text-primary display-4"></i>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="card bg-soft-primary">
+
+                                <div class="row text-center">
+                                    <div class="col-12">
+                                        <div class="text-primary p-3 ">
+                                            <h5 class="text-primary">¡Gracias por unirte!</h5>
+                                            <p>Para nosotros es muy improtante tu ayuda.Muy pronto nos contactaremos contigo</p>
+
+                                        </div>
+                                    </div>   
+                                    <img src="{% static 'backoffice/assets/images/profile-img.png' %}" class="img-fluid" alt="Responsive image"
+                                    class="img-fluid">  
+                                </div>
+                            </div>
+                            <a href="{% url 'users:dashboard' %}" class="btn btn-primary btn-lg enabled" role="button"
+                                aria-enabled="true">Regresar al inicio</a>
+                        </div>
+                        <div class="col-5 align-self-end">
+                            <img src="assets/images/profile-img.png" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock content %}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="col-xl-4 offset-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="mb-2 text-center">Políticas</h3>
+
+                    <div class="text-center">
+                        <div class="mb-4">
+                            <i class="bx bx bx-user-voice   text-primary display-4"></i>
+                        </div>
+                        <h4>Importante</h4>
+                        <p class="text-justify">Esta es una plataforma ciudadana que depende totalmente de la buena voluntad de la gente. 
+                                    No hay garantías de recibir ayuda sí o sí. 
+                                    La información que aquí se carga va a ser 100% de acceso público. </p>
+                    </div>
+                    <div class="text-center">
+                    <a href="{% url 'users:advisor' %}" >Mas información</a>
+                </div>
+                    <div class="table-responsive mt-4 text-center">
+                        <h4>Cómo funciona?</h4>
+                        <p class="text-justify">Si estás dispuesto a ayudar, tenés que completar los campos con tus datos 
+                            (asegurate que todos sean correctos) en la plataforma de unconviteporabejorral.org 
+                            </p>
+                    </div>
+                    <a href="{% url 'users:donor' %}"
+                        class="btn btn-lg btn-block btn-success w-lg waves-effect waves-light"
+                        style="color:white">Entendido</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock content %}
+    
