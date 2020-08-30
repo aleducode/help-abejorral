@@ -9,7 +9,7 @@ class HelpRequestForm(forms.Form):
     name = forms.CharField(
         min_length=2,
         max_length=50,
-        label='¿Cuál es tu nombre?',
+        label='Nombre',
         error_messages={
             'required': 'Este campo es requerido',
         },
@@ -20,6 +20,9 @@ class HelpRequestForm(forms.Form):
     description = forms.CharField(
         label='Descripción del pedido',
         required=False,
+        error_messages={
+            'required': 'Este campo es requerido',
+        },
         widget=forms.Textarea(
             attrs={
                 "rows": 5, "cols": 20,

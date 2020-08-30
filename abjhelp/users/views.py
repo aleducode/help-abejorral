@@ -1,11 +1,12 @@
 """Branches Views."""
 
 # Django
-from django.views.generic import TemplateView, FormView
+from django.views.generic import TemplateView, FormView, DetailView
 from django.urls import reverse_lazy
 
 # Forms
 from abjhelp.users.forms import HelpRequestForm, DonorRequestForm
+from abjhelp.users.models import HelpRequest
 
 
 class DashboardView(TemplateView):
@@ -54,3 +55,19 @@ class ThanksDonorView(TemplateView):
 
 class AdvisorView(TemplateView):
     template_name = 'legal_advisor.html'
+
+
+class InformationView(TemplateView):
+    template_name = 'information.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["helps"] = HelpRequest.objects.all()
+        return context
+    
+class RequestDetailView(DetailView):
+    template_name = 'detail.html'
+    slug_field = 'pk'
+    slug_url_kwarg = 'pk'
+    queryset = HelpRequest.objects.all()
+    context_object_name = 'help'

@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="col-xl-12">
+            <div class="row">
+                {% if helps  %}
+                    
+                {% for help in helps  %}
+                <div class="col-xl-4 col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="media">
+                                <div class="avatar-md mr-4">
+                                    <span class="avatar-title rounded-circle bg-soft-primary text-primary font-size-16">
+                                        {{help.name.0|upper}}
+                                    </span>
+                                        
+                                </div>
+
+                                <div class="media-body overflow-hidden">
+                                    <h5 class="text-truncate font-size-15"><a href="{% url 'users:detail' help.pk %}" class="text-dark">{{help.name}}</a></h5>
+                                    <p class="text-justify">{{help.description|truncatewords:3 }}</p></p>
+                                    <!--<div class="team">Tel: {{help.phone_number}}</div>-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="px-4 py-3 border-top">
+                            <ul class="list-inline mb-0">
+                                <li class="list-inline-item mr-3">
+                                    
+                                    {% if help.is_active %}
+                                        <span class="badge badge-primary">Disponible</span>
+                                    
+                                    {% else %} 
+                                        <span class="badge badge-success">Completado</span>
+                                    {% endif %}
+                                </li>
+                                <li class="list-inline-item mr-3" data-toggle="tooltip" data-placement="top" title=""
+                                    data-original-title="Due Date">
+                                    <i class="bx bx-calendar mr-1"></i>{{help.created|date:"d-m-Y"}}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                    
+                {% endif %}
+
+                </div>
+                <!-- end row -->
+    
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ul class="pagination pagination-rounded justify-content-center mt-2 mb-5">
+                            <li class="page-item disabled">
+                            <a href="#" class="page-link"><i class="mdi mdi-chevron-left"></i></a>
+                            </li>
+                            <li class="page-item">
+                            <a href="#" class="page-link">1</a>
+                                    </li>
+                                    <li class="page-item active">
+                                        <a href="#" class="page-link">2</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a href="#" class="page-link">3</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a href="#" class="page-link">4</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a href="#" class="page-link">5</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a href="#" class="page-link"><i class="mdi mdi-chevron-right"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- end row -->
+                
+                    </div> <!-- container-fluid -->
+                </div>
+                <!-- End Page-content -->
+            </div>
+        </div>
+    </div>
+</div>                                
+{% endblock content %}
