@@ -10,7 +10,6 @@ services:
       context: .
       dockerfile: ./compose/local/django/Dockerfile
     image: abjhelp_local_django
-    container_name: django
     depends_on:
       - postgres
       - mailhog
@@ -28,7 +27,6 @@ services:
       context: .
       dockerfile: ./compose/production/postgres/Dockerfile
     image: abjhelp_production_postgres
-    container_name: postgres
     volumes:
       - local_postgres_data:/var/lib/postgresql/data
       - local_postgres_data_backups:/backups
@@ -52,18 +50,15 @@ services:
 
   mailhog:
     image: mailhog/mailhog:v1.0.0
-    container_name: mailhog
     ports:
       - "8025:8025"
 
   redis:
     image: redis:5.0
-    container_name: redis
 
   celeryworker:
     <<: *django
     image: abjhelp_local_celeryworker
-    container_name: celeryworker
     depends_on:
       - redis
       - postgres
@@ -74,7 +69,6 @@ services:
   celerybeat:
     <<: *django
     image: abjhelp_local_celerybeat
-    container_name: celerybeat
     depends_on:
       - redis
       - postgres
@@ -85,7 +79,6 @@ services:
   flower:
     <<: *django
     image: abjhelp_local_flower
-    container_name: flower
     ports:
       - "5555:5555"
     command: /start-flower

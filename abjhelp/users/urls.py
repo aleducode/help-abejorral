@@ -44,5 +44,15 @@ urlpatterns = [
         view=users_view.ThanksDonorView.as_view(),
         name='thanks_donor'
     ),
+    path(
+        route="solicitudes",
+        view=users_view.InformationView.as_view(),
+        name='help-requests'
+    ),
+    path(
+        route="detalle/<str:pk>/",
+        view=users_view.RequestDetailView.as_view(),
+        name='detail'
+    ),
 
 ]
