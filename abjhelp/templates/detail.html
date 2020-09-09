@@ -4,59 +4,48 @@
 {% block content %}
 <div class="page-content">
     <div class="container-fluid">
-        <div class="col-xl-12">
-           
-                
-                    <div class="card overflow-hidden">
-                        <div class="bg-soft-primary">
-                            <div class="row">
-                                <div class="col-7">
-                                    <div class="text-primary p-3">
-                                        <h5 class="text-primary">Pedido {{help.pk}}</h5>
-                                    </div>
-                                </div>
-                                <div class="col-5 align-self-end">
-                                    <img src="{% static 'backoffice/assets/images/profile-img.png' %}" alt="" class="img-fluid">
-                                </div>
+        <div class="col-xl-6 offset-lg-3">
+            <a href="{% url 'users:help-requests' %}">Regresar</a>
+
+            <div class="card overflow-hidden mt-2">
+                <div class="bg-soft-primary">
+                    <div class="row">
+                        <div class="col-7">
+                            <div class="text-primary p-3">
+                                <h5 class="text-primary">Pedido #{{help.pk}}</h5>
                             </div>
                         </div>
-                    </div>
-                    <!-- end card -->
-
-                    <div class="card">
-                        <div class="card-body">
-                            <h3 class="subtitle has-text-left">{{help.name|upper}}</h3>
-
-                            <p class="has-text-left is-size-6">{{help.description}}</p>
-                            <div class="table-responsive">
-                                <table class="table table-nowrap mb-0">
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">Ubicacion:</th>
-                                            <td>{{help.address}}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <h3 class="subtitle has-text-left">Contactar:</h3>
+                        <div class="col-5 align-self-end">
+                            <img src="{% static 'backoffice/assets/images/profile-img.png' %}" alt="" class="img-fluid">
                         </div>
-                        <div></div>
-                        <h3 class="subtitle has-text-left">
-                            <a class="button hover-grow is-half request-phone-button" href="tel:+541127123431">
-                                
-                                <span>+57{{help.phone_number}}</span>
-                            </a>
-                            <a class="button hover-grow request-whatsapp-button"
-                                href="https://wa.me/541127123431?text=Hola+mariano,+te+escribo+por+el+pedido+que+hiciste:+necesito+de+manera+urgente+mercaderia+https://argentinaporvos.org/pedidos/29">
-                                <span class="icon is-small">
-                            
-                                    <img src="https://argentinaporvos.s3.amazonaws.com/static/img/whatsapp.svg" alt="">
-                                </span>
-                                <span>Contactar vía WhatsApp</span>
-                            </a>
-                        </h3>
                     </div>
+                </div>
+            </div>
+            <!-- end card -->
+
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="subtitle has-text-left">{{help.name|title}}</h3>
+            
+                    <p class="has-text-left is-size-6">{{help.description}}</p>
+                    <h5 class="font-size-15 font-weight-bold">Ubicación: </h5>{{help.address}}
+                    <h5 class="font-size-15 font-weight-bold mt-3">Contactar</h5>
+                    <div class="row">
+                        <div class="col-12 mt-3">
+                            <a type="button" href="tel:+57{{help.phone_number}}"
+                            class="btn btn-dark waves-effect waves-light mr-3">
+                                <i class="bx bx-phone-outgoing font-size-24 align-middle mr-2"></i> Llamar
+                            </a>
+                            <a type="button" href="{{whatsapp}}" class="btn btn-success waves-effect waves-light">
+                                <i class="bx bxl-whatsapp  font-size-24 align-middle mr-2"></i> Whatsapp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            
                 
+            </div>
+
         </div>
     </div>
 </div>

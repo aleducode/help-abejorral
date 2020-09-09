@@ -71,3 +71,10 @@ class RequestDetailView(DetailView):
     slug_url_kwarg = 'pk'
     queryset = HelpRequest.objects.all()
     context_object_name = 'help'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        help_request = self.get_object()
+        context["whatsapp"] = f'https://wa.me/57{help_request.phone_number}?text=Hola+{help_request.name},+te+escribo+por+el+pedido+que+hiciste+en+la+app+Un+Convite+por+Abejorral+https://unconviteporabejorral.org/detalle/{help_request.pk}'
+        return context
+    
