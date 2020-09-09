@@ -1,11 +1,12 @@
 """Branches Views."""
 
 # Django
-from django.views.generic import TemplateView, FormView
+from django.views.generic import TemplateView, FormView, DetailView
 from django.urls import reverse_lazy
 
 # Forms
 from abjhelp.users.forms import HelpRequestForm, DonorRequestForm
+from abjhelp.users.models import HelpRequest
 
 
 class DashboardView(TemplateView):
@@ -54,3 +55,26 @@ class ThanksDonorView(TemplateView):
 
 class AdvisorView(TemplateView):
     template_name = 'legal_advisor.html'
+
+
+class InformationView(TemplateView):
+    template_name = 'information.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["helps"] = HelpRequest.objects.all()
+        return context
+    
+class RequestDetailView(DetailView):
+    template_name = 'detail.html'
+    slug_field = 'pk'
+    slug_url_kwarg = 'pk'
+    queryset = HelpRequest.objects.all()
+    context_object_name = 'help'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        help_request = self.get_object()
+        context["whatsapp"] = f'https://wa.me/57{help_request.phone_number}?text=Hola+{help_request.name},+te+escribo+por+el+pedido+que+hiciste+en+la+app+Un+Convite+por+Abejorral+https://unconviteporabejorral.org/detalle/{help_request.pk}'
+        return context
+    
